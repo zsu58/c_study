@@ -3,5 +3,5 @@
 gcc -o HelloWorld HelloWorld.c
 
 # execute
-./a.out
+./HelloWorld.out
 ```
