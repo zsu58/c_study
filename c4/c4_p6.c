@@ -2,11 +2,8 @@
 
 void main()
 {
-  int nData;
-  printf("Input number: ");
-  scanf("%d", &nData);
-
-  printf("%o\n", nData);
-  printf("%X\n", nData);
-
+  char ch;
+  printf("영어 소문자 입력: ");
+  ch = getchar(); 
+  printf("%c\n", ch - 32);
 }

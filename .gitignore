@@ -4,3 +4,4 @@ vscode*
 *.out
 Microsoft*
 loose/
+appInsights*
