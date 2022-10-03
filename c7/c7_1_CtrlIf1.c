@@ -3,7 +3,8 @@
 void main()
 {
   int nData = 10, nNewData = 20;
-  if (nNewData >= nData){
+  if (nNewData >= nData)
+  {
     printf("%s\n", "nNewData >= nData");
   }
 

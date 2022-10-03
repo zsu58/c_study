@@ -6,7 +6,8 @@ void main()
   printf("Input: ");
   scanf("%d", &nInput);
 
-  if(nInput >= 10) {
+  if(nInput >= 10) 
+  {
     if(nInput > 20)
       puts("20초과");
     else

@@ -5,11 +5,10 @@ void main()
   int nInput = 0;
   printf("Input: ");
   scanf("%d", &nInput);
-  if (nInput >= 10) 
+
+  while(nInput > 0)
   {
-    puts("10 이상");
-  }
-  else {
-    puts("10 미만");
+    printf("%dth printf()\n", nInput);
+    nInput--;
   }
 }

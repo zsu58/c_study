@@ -10,7 +10,8 @@ void main()
   printf("Input: ");
   scanf("%d", &nInput);
 
-  switch(nInput / 10){
+  switch(nInput / 10)
+  {
     case 10:
     case 9:
       chCredit = 'A'; // 10이거나 9인 경우

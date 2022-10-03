@@ -6,7 +6,8 @@ void main()
   int nInput1 = 0, nInput2 = 0;
   printf("영문 소문자 그리고 정수 2개를 빈칸을 구분자로 입력: ");
   scanf("%c %d %d", &ch, &nInput1, &nInput2);
-  switch(ch){
+  switch(ch)
+  {
     case 'a':
       printf("%d\n", nInput1 + nInput2);
       break;
