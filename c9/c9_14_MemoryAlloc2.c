@@ -8,11 +8,10 @@ void main()
   int nInput = 0;
 
   printf("Input length: ");
-  scanf("%d", &nInput);
+  scanf("%d\n", &nInput);
   pszData = (char*)calloc(nInput, sizeof(char));
 
   fflush(stdin);
-  printf("Input: ");
   gets(pszData);
   puts(pszData); 
 

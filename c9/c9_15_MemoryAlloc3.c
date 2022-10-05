@@ -8,20 +8,28 @@ void main()
 
   pszBuffer = (char*)malloc(12);
   sprintf(pszBuffer, "%s", "TestString");
+  size_t ch_size = malloc_usable_size(pszBuffer)/sizeof(char);
   printf(
-      "[%p] %d %s\n",
-      pszBuffer, _msize(pszBuffer), pszBuffer
+      "[%p] %ld %s\n",
+      // pszBuffer, _msize(pszBuffer), pszBuffer // _msize는 windows compiler
+      pszBuffer, ch_size, pszBuffer // 할당 받은 크기는 실제 요청 값과 차이날 수 있음
   );
 
-  pszNewBuffer = (char*)realloc(pszBuffer, 32);
+  /*
+  기존에 할당받은 메모리를 확장하야 다시 받은 후 새로운 포인터 변수에 주소 저장
+  주소가 달라진 것을 통해, 메모리 확장에 실패했기 때문에 다른 주소에 메모리를 새로 확보하고서 그 주소를 반환한 것을 알 수 있음
+  */
+  pszNewBuffer = (char*)realloc(pszBuffer, 32); 
 
-  if(pszNewBuffer == NULL)
-    free(pszBuffer);
+  if(pszNewBuffer == NULL) // 메모리 다시 할당받는데 실패
+    free(pszBuffer); // realloc()은 메모리 확장에 실패하면 기존의 메모리 해제
 
   sprintf(pszNewBuffer, "%s", "TestStringData");
+  size_t ch_size2 = malloc_usable_size(pszNewBuffer)/sizeof(char);
   printf(
-      "[%p] %d %s\n",
-      pszNewBuffer, _msize(pszNewBuffer), pszNewBuffer
+      "[%p] %ld %s\n",
+      // pszNewBuffer, _msize(pszNewBuffer), pszNewBuffer
+      pszNewBuffer, ch_size2, pszNewBuffer         
   );
 
   free(pszNewBuffer);

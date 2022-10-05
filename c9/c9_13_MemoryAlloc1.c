@@ -7,12 +7,12 @@ void main()
   int nInput = 0;
 
   printf("Input length: ");
-  scanf("%d", &nInput);
+  scanf("%d\n", &nInput);
   pszData = (char*)malloc(sizeof(char) * nInput); // 입력받은 수만큼의 메모리를 동적으로 할당받은 후 그 주소를 pszData 포인터 변수에 저장
 
   fflush(stdin); // 표준 입력 장치 파일의 입출력 정보를 초기화(문자열 입력 받을 시 문자열의 맨 나중에 개행 문자 (\n)가 추가되기 때문)
-  printf("Input: ");
   gets(pszData); // 사용자로부터 입력받은 문자열을 pszData 포인터 변수에 저장된 주소의 메모리에 저장
+  // fgets(pszData, nInput, stdin);
   puts(pszData); 
 
   free(pszData); // 동적으로 할당받은 메모리를 해제
