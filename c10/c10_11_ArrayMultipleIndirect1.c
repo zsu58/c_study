@@ -7,5 +7,6 @@ void main()
 
   printf("%c, %c\n", szName[3], pszName[3]);
   printf("%p, %p\n", szName + 3, pszName + 3);
+  printf("%s, %s\n", szName + 3, pszName + 3);
   printf("%c, %c\n", *(szName + 3), *(pszName + 3));
 }
