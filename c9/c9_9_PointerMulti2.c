@@ -10,6 +10,7 @@ void main()
 
   printf("%c\n", **apszList); // apszList는 배열의 이름으로 주소, 이 주소를 한번 간접 지정하면 char*, 두 번 간접 지정하면 char형
   printf("%c\n", *apszList[1]); // apszList에 대해 배열 연산 수행 후(결과 char*형) 그 결과에 대해서 간접 지정 연산 수행
+  printf("%c\n", **(apszList+1)); // 위와 같음
   printf("%c\n", *pszBuffer);
 
   printf("%s\n", apszList[0]); // apszList는 요소가 char*형인 배열의 이름이기에 배열 연산의 결과는 char*형
