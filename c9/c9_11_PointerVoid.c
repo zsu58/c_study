@@ -8,11 +8,11 @@ void main()
   void *pfnName = main;
   void *pData = &nData;
 
-  // 아래 코드는 컴파일 오류
+  // 아래 코드는 컴파일 오류, 왜냐하면 자료형이 정해져 있지 않아 offset 계산을 못함
   // printf("%c", *(pszData + 1));
 
   printf("%s\n", ((char*)pszData + 1)); // char*로 형변환하면 가능
-  printf("%d\n", *((char*)pszData + 1)); // char*로 형변환하면 가능
+  printf("%c\n", *((char*)pszData + 1)); // char*로 형변환하면 가능
 }
 /*
 void형은 메모리를 해석하는 방법을 구체적으로 결정하지 않은 자료형, 따라서 void*형은 자료형에 상관없이 주소를 저장할 수 있음
